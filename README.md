@@ -42,6 +42,12 @@ arms through 90°), yet the learner builds the same cube in every run:
 
 One row per run: [`results/summary_scale4.csv`](results/summary_scale4.csv).
 
+## Chaos test
+
+Two simulated runs of an ideal double pendulum that start 0.001° apart: their trajectories separate
+exponentially (Lyapunov exponent λ = 6.6 s⁻¹), while SKA learns the same probability and entropy
+distributions from both. See [`chaos-test/`](chaos-test/README.md).
+
 ## Cubes
 
 For each run N (0 to 20), in `vr/`:
