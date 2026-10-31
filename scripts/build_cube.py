@@ -47,7 +47,10 @@ def main():
     s = swap(s, "const toZ = v => -(v / D.zdmax - 0.5) * SIZE;",
              "const toZ = v => -((v - D.zdmin) / (D.zdmax - D.zdmin) - 0.5) * SIZE;")
     s = swap(s, "<title>Transition Probability VR</title>", f"<title>Double Pendulum SKA{' Entropy' if ent else ''}</title>")
-    desc = (f"IBM double pendulum (Asseman et al. 2018), run {csv.stem}, steps 3–{last:,} "
+    src = (f"Simulated ideal double pendulum, run {csv.stem.split('_')[2][-1].upper()} (released at rest from "
+           f"θ1 = θ2 = 150°; run B: θ2 + 0.001°)" if "runsim" in csv.stem
+           else f"IBM double pendulum (Asseman et al. 2018), run {csv.stem}")
+    desc = (f"{src}, steps 3–{last:,} "
             f"({last / 400:.2f} s at 400 Hz). Input: the return of v = cos(θ2 − θ1). ")
     s = s.replace(s[s.find("<p>E. coli"):s.find("Horizontal axes:")], f"<p>{desc}")
     s = s.replace(s[s.find("vertical axis: P.") + len("vertical axis: P."):s.find("</p>", s.find("vertical axis: P."))],

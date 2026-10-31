@@ -46,9 +46,6 @@ Each run learned as the IBM runs: input the simple return of v = cos(θ2 − θ1
 | P on the other steps (median) | 0.99 | 0.99 |
 | entropy minimum | −1.575 at step 1,043 | −1.584 at step 922 |
 
-The gaps |z_A − z_B| (knowledge) and |H_A − H_B| (entropy) grow during the first 2 s, then stay small:
-about 0.2 in z (z ≈ 510) and 0.03 in H, while the trajectories keep separating.
-
 ## Cubes
 
 Run A on the left, run B on the right, each in its own area (own rotation, zoom, legend, VR button):
@@ -65,7 +62,7 @@ Colours from the input v: v rising, v falling, v crossing 0 (the arms at 90°).
 In `../scripts/`:
 
 - `simulate.py`: the two runs (`data/sim/sim_a.csv`, `sim_b.csv`) and `results/sim_divergence.png`
-- `lyapunov.py`: the Benettin exponent and the SKA gaps (`results/lyapunov.png`)
+- `lyapunov.py`: the Benettin exponent
 - `build_cube.py`, `build_side_by_side.py`: the two pages
 
 Learning output: `../results/ska_runsim_a_scale4.csv`, `../results/ska_runsim_b_scale4.csv`.
